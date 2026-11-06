@@ -21,4 +21,4 @@ Recipe finder for iOS built with UIKit and GCD. Search meals by ingredient, cuis
 No API key setup required — the app uses TheMealDB public test key.
 
 ## License
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
