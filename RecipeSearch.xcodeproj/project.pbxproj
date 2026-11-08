@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W4FZ53QW9L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipeSearch/Info.plist;
+				INFOPLIST_FILE = RecipeSearch/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -179,7 +179,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W4FZ53QW9L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipeSearch/Info.plist;
+				INFOPLIST_FILE = RecipeSearch/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
