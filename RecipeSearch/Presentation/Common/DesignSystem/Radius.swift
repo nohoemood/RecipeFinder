@@ -4,7 +4,7 @@ import Foundation
 import UIKit
 
 enum Radius {
-    static let small:  CGFloat = 10   // чипсы, маленькие кнопки
-    static let medium: CGFloat = 16   // карточки рецептов и категорий
-    static let large:  CGFloat = 26   // большие блоки, sheet
+    static let small:  CGFloat = 10
+    static let medium: CGFloat = 16
+    static let large:  CGFloat = 26
 }

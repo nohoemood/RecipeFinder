@@ -21,6 +21,7 @@ enum AppFont {
     static let cardTitle = scaled(rounded(size: 17, weight: .semibold), .headline)
     static let cardCaption = scaled(rounded(size: 13, weight: .medium), .footnote)
 
+    
     // MARK: Functions -
     private static func rounded(size: CGFloat, weight: UIFont.Weight) -> UIFont {
         let base = UIFont.systemFont(ofSize: size, weight: weight)
