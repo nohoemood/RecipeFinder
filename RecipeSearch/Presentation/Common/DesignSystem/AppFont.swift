@@ -13,6 +13,7 @@ enum AppFont {
     static let body = scaled(.systemFont(ofSize: 17, weight: .regular), .body)
     static let callout = scaled(.systemFont(ofSize: 16, weight: .regular), .callout)
     static let subheadline = scaled(.systemFont(ofSize: 15, weight: .regular), .subheadline)
+    static let subheadline2 = scaled(.systemFont(ofSize: 15, weight: .semibold), .subheadline)
     static let footnote = scaled(.systemFont(ofSize: 13, weight: .regular), .footnote)
     static let caption1 = scaled(.systemFont(ofSize: 12, weight: .regular), .caption1)
 
