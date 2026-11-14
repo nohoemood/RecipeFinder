@@ -1,5 +1,6 @@
 # RecipeFinder
 Recipe finder for iOS built with UIKit and GCD. Search meals by ingredient, cuisine or category, powered by [TheMealDB API](https://www.themealdb.com/api.php).
+
 No API key setup required - the app uses TheMealDB public test key.
 
 ## Features
