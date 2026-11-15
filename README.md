@@ -14,9 +14,10 @@ Designed in Figma before development. [View Figma Mockup](https://www.figma.com/
 ## Stack
 1. Swift
 2. UIKit
-3. MVVM + C with Clean Architecture
-4. GCD
-5. URLSession + Codable
+3. Auto Layout + UIStackView (No Storyboards)
+4. MVVM + C with Clean Architecture
+5. GCD
+6. URLSession, Codable
 
 ## Getting started
 1. Clone the repo: `git clone https://github.com/nohoemood/RecipeFinder.git`
