@@ -4,11 +4,14 @@ import Foundation
 import UIKit
 
 class ImageView: UIImageView {
-    init(imageName: String) {
+    init(imageName: String, contentMode: UIView.ContentMode) {
         super.init(frame: .zero)
         
         self.image = UIImage(named: imageName)
-        self.contentMode = .scaleAspectFill
+        self.contentMode = contentMode /*scaleAspectFill*/
+        
+        self.layer.cornerRadius = 24
+        self.clipsToBounds = true
         
         self.translatesAutoresizingMaskIntoConstraints = false
     }

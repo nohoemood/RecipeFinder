@@ -2,7 +2,7 @@
 
 import UIKit
 
-class WelcomeVC: UIViewController {
+final class WelcomeVC: UIViewController {
 
     // MARK: LifeCircle -
     override func loadView() {
