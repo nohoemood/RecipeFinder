@@ -4,6 +4,7 @@ import Foundation
 import UIKit
 
 final class HeaderView: UIView {
+    
     // MARK: UI -
     private let imageView1 = ImageView(imageName: "Bulgarian Green Salad", contentMode: .scaleAspectFill)
     private let imageView2 = ImageView(imageName: "Chicken wings with cumin, lemon & garlic", contentMode: .scaleAspectFill)
@@ -51,6 +52,7 @@ final class HeaderView: UIView {
     // MARK: Init -
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         setupUI()
     }

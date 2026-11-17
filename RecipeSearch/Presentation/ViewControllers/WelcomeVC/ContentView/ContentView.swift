@@ -7,7 +7,10 @@ final class ContentView: UIView {
 
     private let headerView = HeaderView()
     private let fadeView = FadeView()
+    private let appLogo = ImageView(imageName: "LaunchLogo", contentMode: .scaleToFill)
 
+    private let textView = TextView()
+    
     // MARK: Init -
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,10 +26,14 @@ final class ContentView: UIView {
     private func setupUI() {
         backgroundColor = AppColor.Background.primary
 
-        [headerView, fadeView].forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(headerView)
+        headerView.addSubview(fadeView)
+        fadeView.addSubview(appLogo)
+
+        [textView].forEach { view in
             addSubview(view)
         }
+        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: topAnchor, constant: -96),
             headerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -4),
@@ -37,6 +44,16 @@ final class ContentView: UIView {
             fadeView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
             fadeView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             fadeView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+            
+            appLogo.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+            appLogo.centerXAnchor.constraint(equalTo: centerXAnchor),
+            appLogo.widthAnchor.constraint(equalToConstant: 100),
+            appLogo.heightAnchor.constraint(equalToConstant: 100),
+            
+            textView.topAnchor.constraint(equalTo: appLogo.bottomAnchor),
+            textView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            textView.heightAnchor.constraint(equalToConstant: 115)
         ])
     }
 }

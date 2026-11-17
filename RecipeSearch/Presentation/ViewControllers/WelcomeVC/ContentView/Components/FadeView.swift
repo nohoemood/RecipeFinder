@@ -1,23 +1,17 @@
 // FadeView.swift by mac 16.11.2026
 
-
-
 import Foundation
 import UIKit
 
 final class FadeView: UIView {
 
-    override class var layerClass: AnyClass {
-        CAGradientLayer.self
-    }
-
-    private var gradientLayer: CAGradientLayer {
-        layer as! CAGradientLayer
-    }
+    override class var layerClass: AnyClass { CAGradientLayer.self }
+    private var gradientLayer: CAGradientLayer { layer as! CAGradientLayer }
 
     // MARK: Init -
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.translatesAutoresizingMaskIntoConstraints = false
 
         setupUI()
     }
@@ -27,7 +21,7 @@ final class FadeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: UI -
+    // MARK: Functions
     private func setupUI() {
         backgroundColor = .clear
         translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +39,7 @@ final class FadeView: UIView {
         }
     }
 
-    // MARK: Appearance -
+    // appearance
     private func updateGradientColors() {
         let backgroundColor = AppColor.Background.primary!.resolvedColor(with: traitCollection)
 
