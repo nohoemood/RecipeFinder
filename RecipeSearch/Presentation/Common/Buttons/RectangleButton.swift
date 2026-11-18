@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-class TextButton: UIButton {
+class RectangleButton: UIButton {
     init(text: String, isActive: Bool, action: UIAction) {
         super.init(frame: .zero)
 
@@ -11,7 +11,7 @@ class TextButton: UIButton {
         var configuration = UIButton.Configuration.filled()
 
         configuration.title = text
-        configuration.baseForegroundColor = AppColor.Labels.primaryInvert
+        configuration.baseForegroundColor = isActive ? AppColor.Labels.primaryInvert : AppColor.Labels.primary
         configuration.titleAlignment = .center
 
         configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { attributes in

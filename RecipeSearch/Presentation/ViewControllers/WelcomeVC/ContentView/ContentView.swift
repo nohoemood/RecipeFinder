@@ -8,8 +8,21 @@ final class ContentView: UIView {
     private let headerView = HeaderView()
     private let fadeView = FadeView()
     private let appLogo = ImageView(imageName: "LaunchLogo", contentMode: .scaleToFill)
-
+    
     private let textView = TextView()
+    
+    private lazy var buttonsView = ButtonsView(createAccAction: createAccAction, logInAction: logInAction)
+    
+    // MARK: Actions -
+    private lazy var createAccAction: UIAction = UIAction { [weak self] action in
+        guard let self = self, let sender = action.sender as? UIButton else { return }
+        //
+    }
+    
+    private lazy var logInAction: UIAction = UIAction { [weak self] action in
+        guard let self = self, let sender = action.sender as? UIButton else { return }
+        //
+    }
     
     // MARK: Init -
     override init(frame: CGRect) {
@@ -30,7 +43,7 @@ final class ContentView: UIView {
         headerView.addSubview(fadeView)
         fadeView.addSubview(appLogo)
 
-        [textView].forEach { view in
+        [textView, buttonsView].forEach { view in
             addSubview(view)
         }
         
@@ -53,7 +66,11 @@ final class ContentView: UIView {
             textView.topAnchor.constraint(equalTo: appLogo.bottomAnchor),
             textView.leadingAnchor.constraint(equalTo: leadingAnchor),
             textView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            textView.heightAnchor.constraint(equalToConstant: 115)
+            
+            buttonsView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 43),
+            buttonsView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            buttonsView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            buttonsView.heightAnchor.constraint(equalToConstant: 116),
         ])
     }
 }
