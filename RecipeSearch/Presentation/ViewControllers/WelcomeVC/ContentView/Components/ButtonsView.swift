@@ -7,6 +7,7 @@ final class ButtonsView: UIView {
     
     private let createAccAction: UIAction
     private let logInAction: UIAction
+    private let demoAccAction: UIAction
     
     // MARK: UI -
     private lazy var createAccButton = RectangleButton(text: "Create account",
@@ -15,9 +16,12 @@ final class ButtonsView: UIView {
     private lazy var logInButton = RectangleButton(text: "Log in",
                                                    isActive: false,
                                                    action: logInAction)
+    private lazy var demoAccButton = TextButton(text: "Try the demo account",
+                                                   isActive: false,
+                                                   action: demoAccAction)
     
     private lazy var buttonStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [createAccButton, logInButton])
+        let stack = UIStackView(arrangedSubviews: [createAccButton, logInButton, demoAccButton])
         
         stack.axis = .vertical
         stack.spacing = 12
@@ -32,9 +36,10 @@ final class ButtonsView: UIView {
     }()
     
     // MARK: Init -
-    init(createAccAction: UIAction, logInAction: UIAction) {
-        self.createAccAction = createAccAction
-        self.logInAction = logInAction
+    init(actions: [UIAction]) {
+        self.createAccAction = actions[0]
+        self.logInAction = actions[1]
+        self.demoAccAction = actions[2]
         
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +74,8 @@ final class ButtonsView: UIView {
             buttonStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             createAccButton.heightAnchor.constraint(equalToConstant: 52),
-            logInButton.heightAnchor.constraint(equalTo: createAccButton.heightAnchor)
+            logInButton.heightAnchor.constraint(equalTo: createAccButton.heightAnchor),
+            demoAccButton.heightAnchor.constraint(equalToConstant: 30),
         ])
     }
 }

@@ -28,6 +28,7 @@ class RectangleButton: UIButton {
         
         self.configuration = configuration
         self.addAction(action, for: .touchUpInside)
+        
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 

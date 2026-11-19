@@ -11,22 +11,31 @@ final class ContentView: UIView {
     
     private let textView = TextView()
     
-    private lazy var buttonsView = ButtonsView(createAccAction: createAccAction, logInAction: logInAction)
+    private lazy var buttonsView = ButtonsView(actions: [createAccAction, logInAction, demoAccAction])
     
     // MARK: Actions -
     private lazy var createAccAction: UIAction = UIAction { [weak self] action in
         guard let self = self, let sender = action.sender as? UIButton else { return }
-        //
+        
+        print("Create account tapped")
     }
     
     private lazy var logInAction: UIAction = UIAction { [weak self] action in
         guard let self = self, let sender = action.sender as? UIButton else { return }
-        //
+        
+        print("Log in tapped")
+    }
+    
+    private lazy var demoAccAction: UIAction = UIAction { [weak self] action in
+        guard let self = self, let sender = action.sender as? UIButton else { return }
+        
+        print("Try demo account tapped")
     }
     
     // MARK: Init -
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupUI()
     }
 
