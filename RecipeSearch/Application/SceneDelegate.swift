@@ -1,27 +1,27 @@
-// SceneDelegate.swift by mac 08.10.2026 
+// SceneDelegate.swift by mac 08.10.2026
 
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
+
     private var appCoordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
-        
+
         let navigationController = UINavigationController()
         let screenFactory = ScreenFactory()
-        
+
         let appCoordinator = AppCoordinator(navigationController: navigationController, screenFactory: screenFactory)
         self.appCoordinator = appCoordinator
         appCoordinator.start()
-        
+
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
-        
+
         self.window = window
     }
 
@@ -52,7 +52,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-
