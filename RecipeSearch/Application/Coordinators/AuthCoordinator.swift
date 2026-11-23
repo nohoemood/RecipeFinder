@@ -16,7 +16,21 @@ class AuthCoordinator: Coordinator {
     }
 
     func start() {
-        let screen = screenFactory.makeWelcomeVC()
-        navigationController.setViewControllers([screen], animated: false)
+        let welcomeVC = screenFactory.makeWelcomeVC()
+        
+        welcomeVC.onCreateAccount = {
+            print("Create account - from AuthCoordinator")
+        }
+        
+        welcomeVC.onLogIn = {
+            print("Log in - from AuthCoordinator")
+        }
+        
+        welcomeVC.onTryDemoAccount = { [weak self] in
+            print("Try the demo account - from AuthCoordinator")
+            guard let strongSelf = self else { return }
+        }
+        
+        navigationController.setViewControllers([welcomeVC], animated: false)
     }
 }
