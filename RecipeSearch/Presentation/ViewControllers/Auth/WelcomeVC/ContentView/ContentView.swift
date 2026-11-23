@@ -5,6 +5,7 @@ import UIKit
 
 final class ContentView: UIView {
 
+    // MARK: UI -
     private let headerView = HeaderView()
     private let fadeView = FadeView()
     private let appLogo = ImageView(imageName: "LaunchLogo", contentMode: .scaleToFill)
@@ -13,24 +14,27 @@ final class ContentView: UIView {
     
     private lazy var buttonsView = ButtonsView(actions: [createAccAction, logInAction, demoAccAction])
     
+    
     // MARK: Actions -
     private lazy var createAccAction: UIAction = UIAction { [weak self] action in
-        guard let self = self, let sender = action.sender as? UIButton else { return }
-        
-        print("Create account tapped")
+        guard let strongSelf = self, let sender = action.sender as? UIButton else { return }
+        strongSelf.onCreateAccount?()
     }
     
     private lazy var logInAction: UIAction = UIAction { [weak self] action in
-        guard let self = self, let sender = action.sender as? UIButton else { return }
-        
-        print("Log in tapped")
+        guard let strongSelf = self, let sender = action.sender as? UIButton else { return }
+        strongSelf.onLogIn?()
     }
     
     private lazy var demoAccAction: UIAction = UIAction { [weak self] action in
-        guard let self = self, let sender = action.sender as? UIButton else { return }
-        
-        print("Try demo account tapped")
+        guard let strongSelf = self, let sender = action.sender as? UIButton else { return }
+        strongSelf.onTryDemoAccount?()
     }
+    
+    // MARK: Callbacks -
+    var onCreateAccount: (() -> Void)?
+    var onLogIn: (() -> Void)?
+    var onTryDemoAccount: (() -> Void)?
     
     // MARK: Init -
     override init(frame: CGRect) {
@@ -52,7 +56,7 @@ final class ContentView: UIView {
         headerView.addSubview(fadeView)
         fadeView.addSubview(appLogo)
 
-        [textView, buttonsView].forEach { view in
+        for view in [textView, buttonsView] {
             addSubview(view)
         }
         
@@ -76,10 +80,9 @@ final class ContentView: UIView {
             textView.leadingAnchor.constraint(equalTo: leadingAnchor),
             textView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            buttonsView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 43),
+            buttonsView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 35),
             buttonsView.leadingAnchor.constraint(equalTo: leadingAnchor),
             buttonsView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            buttonsView.heightAnchor.constraint(equalToConstant: 116),
         ])
     }
 }
